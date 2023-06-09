@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/back" >
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/back">
@@ -60,7 +58,7 @@
                         android:src="@drawable/notification" />
 
                     <ImageView
-
+android:id="@+id/btnShare"
                         android:layout_width="@dimen/_22sdp"
                         android:layout_height="wrap_content"
 
@@ -290,11 +288,13 @@
         android:layout_height="80dp"
         android:layout_below="@id/cardView"
 
-        android:layout_margin="8dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
 
-        />
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
 
 
     <LinearLayout

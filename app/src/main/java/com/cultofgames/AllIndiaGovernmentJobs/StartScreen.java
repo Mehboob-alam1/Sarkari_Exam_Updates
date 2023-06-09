@@ -45,7 +45,7 @@ public class StartScreen extends AppCompatActivity{
     TextView privacy;
     SliderView sliderView;
      DatabaseReference databaseReference;
-    private ArrayList<Slider> list;
+     ArrayList<Slider> list;
     SliderAdapter adapter;
 
 
@@ -203,8 +203,12 @@ public class StartScreen extends AppCompatActivity{
                 if (snapshot.exists()){
                     list.clear();
                     for (DataSnapshot snapshot1: snapshot.getChildren()){
-                        Slider slider = snapshot1.getValue(Slider.class);
-                        list.add(new Slider(slider.getImageLink(),slider.getImageUrl(),slider.getPushId()));
+                  String imageUrl=      snapshot1.child("imageUrl").getValue(String.class);
+                  String imageLink=      snapshot1.child("imageLink").getValue(String.class);
+                  String pushId=      snapshot1.child("pushId").getValue(String.class);
+
+//                        Toast.makeText(StartScreen.this, ""+data, Toast.LENGTH_SHORT).show();
+                        list.add(new Slider(imageLink,imageUrl,pushId));
                     }
                     adapter=new SliderAdapter(list,StartScreen.this);
                     sliderView.setSliderAdapter(adapter);

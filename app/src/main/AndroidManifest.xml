@@ -5,10 +5,9 @@
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <!--        android:name="com.cultofgames.AllIndiaGovernmentJobs.AppInit.AppCheck"-->
-    <application
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,86 +18,92 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SarkariExamUpdates"
         android:usesCleartextTraffic="true">
-
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.ExpiredGovjob"
-            android:exported="true"
+            android:name=".WebActivity"
+            android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/noactionbarshow" />
-
+            android:theme="@style/noactionbarshow" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.CurrentAffairsdetail"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/noactionbarshow" />
-        <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.CategoryContent"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/noactionbarshow" />
-        <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.CategoryDetails"
+            android:name=".ExpiredGovjob"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.ExamresultsContent"
+            android:name=".CurrentAffairsdetail"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.DailynewsContent"
+            android:name=".CategoryContent"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.Currentaffairs"
+            android:name=".CategoryDetails"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.Notification"
+            android:name=".ExamresultsContent"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.AllgovjobContent"
+            android:name=".DailynewsContent"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.Category"
+            android:name=".Currentaffairs"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.Examresults"
+            android:name=".Notification"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.Dailynews"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/noactionbarshow" />
-
-        <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.AllGovjob"
+            android:name=".AllgovjobContent"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.MainActivity"
+            android:name=".Category"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.StartScreen"
+            android:name=".Examresults"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow" />
         <activity
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.SplashScreen"
+            android:name=".Dailynews"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/noactionbarshow" />
+        <activity
+            android:name=".AllGovjob"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/noactionbarshow" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/noactionbarshow" />
+        <activity
+            android:name=".StartScreen"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/noactionbarshow" />
+        <activity
+            android:name=".SplashScreen"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/noactionbarshow">
@@ -115,14 +120,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-        <service
-            android:name="com.cultofgames.AllIndiaGovernmentJobs.AppInit.MyFirebaseMessagingService"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>

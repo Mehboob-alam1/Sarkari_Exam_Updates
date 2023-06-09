@@ -48,11 +48,11 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHol
         viewHolder.itemView.setOnClickListener(v -> {
 
 
-            Toast.makeText(context, ""+slider.getImageUrl(), Toast.LENGTH_SHORT).show();
+           // Toast.makeText(context, ""+slider.getImageUrl(), Toast.LENGTH_SHORT).show();
 
-//            Intent i = new Intent(Intent.ACTION_VIEW);
-//            i.setData(Uri.parse(slider.getImageLink()));
-//            context.startActivity(i);
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(slider.getImageLink()));
+            context.startActivity(i);
         });
 
     }
@@ -62,7 +62,7 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHol
         return list.size();
     }
 
-    class SliderViewHolder extends ViewHolder {
+    public class SliderViewHolder extends ViewHolder {
         ImageView imageView;
 
         public SliderViewHolder(View itemView) {
