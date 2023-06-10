@@ -22,15 +22,19 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.cultofgames.AllIndiaGovernmentJobs.SarkariAdapter.SliderAdapter;
 import com.cultofgames.AllIndiaGovernmentJobs.SarkariModal.Slider;
+import com.cultofgames.AllIndiaGovernmentJobs.games.GamesActivity;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.VideoOptions;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.nativead.MediaView;
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Slider> list;
     SliderAdapter adapter;
     String imageBanner,imageLink;
+
     private NativeAd mobNativeView;
 
     private void NativeBinding(NativeAd nativeAd, NativeAdView adView) {
@@ -202,6 +207,9 @@ public class MainActivity extends AppCompatActivity {
         notification = findViewById(R.id.notification);
 playGame=findViewById(R.id.playGame);
 playQuiz=findViewById(R.id.playQuiz);
+
+
+
         findgovjob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -237,8 +245,8 @@ playQuiz.setOnClickListener(view -> {
     startActivity(i);
 });
 playGame.setOnClickListener(view -> {
-    Intent i = new Intent(MainActivity.this,WebActivity.class);
-    i.putExtra("url","https://4515.play.quizzop.com/");
+    Intent i = new Intent(MainActivity.this, GamesActivity.class);
+    //i.putExtra("url","https://4515.play.quizzop.com/");
     startActivity(i);
 });
         dailynews.setOnClickListener(new View.OnClickListener() {
