@@ -19,7 +19,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="360dp"
                 android:background="@drawable/back"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +88,7 @@
                     <com.smarteist.autoimageslider.SliderView
                         android:id="@+id/imageSliderMain"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
+                        android:layout_height="220dp"
                         app:dotsCornerRadius="8dp"
                         app:dotsSize="6dp"
                         app:dotsSpacing="1dp"
