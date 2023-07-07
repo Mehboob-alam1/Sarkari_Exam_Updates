@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
 
             // we are calling below method after
             // setting our toolbar color.
-            openCustomTab(MainActivity.this, customIntent.build(), Uri.parse("https://4515.play.quizzop.com/"));
+            openCustomTab(MainActivity.this, customIntent.build(), Uri.parse("https://735.game.qureka.com"));
 //    Intent i = new Intent(MainActivity.this,WebActivity.class);
 //    i.putExtra("url","http://735.game.qureka.com/");
 //    startActivity(i);
@@ -348,13 +348,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         bannerImage.setOnClickListener(view -> {
-            try {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(imageLink));
-                startActivity(i);
-            }catch (Exception e){
-                Toast.makeText(this, ""+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
+            CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
+
+            // below line is setting toolbar color
+            // for our custom chrome tab.
+            customIntent.setToolbarColor(ContextCompat.getColor(this, R.color.purple_200));
+
+            // we are calling below method after
+            // setting our toolbar color.
+            openCustomTab(MainActivity.this, customIntent.build(), Uri.parse(imageLink));
 
         });
         fetchBanners();

@@ -4,10 +4,10 @@
     <string name="secretKey">tradedivine</string>
     <string name="timeOut">30000</string>
     <string name="Admob_AppID">ca-app-pub-7076187754168943~6474644829</string>
-    <string name="Admob_AppOpen">ca-app-pub-7076187754168943/9424225885</string>
-    <string name="Admob_Interstitial">ca-app-pub-7076187754168943/6822909431</string>
-    <string name="Admob_Banner">ca-app-pub-7076187754168943/4284376006</string>
-    <string name="Admob_Native">ca-app-pub-7076187754168943/9647587161</string>
+    <string name="Admob_AppOpen">ca-app-pub-7076187754168943/9286747634</string>
+    <string name="Admob_Interstitial">ca-app-pub-7076187754168943/3409990021</string>
+    <string name="Admob_Banner">ca-app-pub-7076187754168943/8529033881</string>
+    <string name="Admob_Native">ca-app-pub-7076187754168943/6586817703</string>
 
     <string name="privacy">https://bit.ly/DestinyOfShadows</string>
 
