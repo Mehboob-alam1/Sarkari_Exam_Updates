@@ -284,6 +284,10 @@ public class AllGovjob extends AppCompatActivity implements GovtJoblistAdapter.O
             mRecyclerView.setHasFixedSize(true);
             LinearLayoutManager manager = new LinearLayoutManager(context);
             mRecyclerView.setLayoutManager(manager);
+
+
+
+
             GovtJoblistAdapter adapter = new GovtJoblistAdapter(context, arrayList, this);
             mRecyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();

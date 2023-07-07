@@ -130,11 +130,11 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:background="@color/white"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:padding="@dimen/_8sdp">
+                    >
 
 
                     <LinearLayout
@@ -147,15 +147,15 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="70dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/bg_rectangle"
                             android:gravity="center"
                             android:orientation="vertical">
 
                             <ImageView
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_30sdp"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
 
                                 android:src="@drawable/gs_gov_job" />
                         </LinearLayout>
@@ -167,13 +167,13 @@
                             android:fontFamily="@font/poppins_medium"
                             android:text="Govt Jobs"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/currentaffairs"
+                        android:id="@+id/jobGpt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
@@ -183,17 +183,17 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="70dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/bg_rectangle"
                             android:gravity="center"
                             android:orientation="vertical">
 
                             <ImageView
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_30sdp"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
 
-                                android:src="@drawable/gs_current_affairs" />
+                                android:src="@drawable/job_gpt" />
                         </LinearLayout>
 
 
@@ -201,15 +201,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="Current affair"
+                            android:text="Job Gpt"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/dailynews"
+                        android:id="@+id/portfolioBuilder"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
@@ -219,17 +219,17 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="70dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/bg_rectangle"
                             android:gravity="center"
                             android:orientation="vertical">
 
                             <ImageView
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_30sdp"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
 
-                                android:src="@drawable/gs_news" />
+                                android:src="@drawable/portfolio" />
                         </LinearLayout>
 
 
@@ -237,9 +237,46 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_medium"
-                            android:text="Daily news"
+                            android:text="Portfolio builder"
+                            android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/globalNews"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/bg_rectangle"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+
+                                android:src="@drawable/global_news" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Global news"
+                            android:textColor="@color/black"
+                            android:textSize="8sp" />
 
 
                     </LinearLayout>
@@ -255,15 +292,15 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="70dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/bg_rectangle"
                             android:gravity="center"
                             android:orientation="vertical">
 
                             <ImageView
-                                android:layout_width="@dimen/_25sdp"
-                                android:layout_height="@dimen/_30sdp"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
 
                                 android:src="@drawable/gs_grade" />
                         </LinearLayout>
@@ -275,10 +312,12 @@
                             android:fontFamily="@font/poppins_medium"
                             android:text="Exam Result"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
 
                     </LinearLayout>
+
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -293,11 +332,13 @@
             android:layout_height="80dp"
             android:layout_below="@id/cardView"
 
+            android:layout_alignParentStart="true"
+
+
+            android:layout_alignParentEnd="true"
+
             android:layout_marginStart="8dp"
-
-
             android:layout_marginEnd="8dp"
-
             android:scaleType="centerCrop"
             android:src="@drawable/background" />
 
@@ -336,7 +377,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
 
-android:padding="@dimen/_4sdp"
+                    android:padding="@dimen/_4sdp"
                     android:orientation="vertical">
 
 
@@ -347,14 +388,14 @@ android:padding="@dimen/_4sdp"
 
 
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="4dp"
                         android:foreground="?selectableItemBackground"
                         android:orientation="horizontal"
                         app:layout_constraintEnd_toStartOf="@+id/profession"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintHorizontal_chainStyle="spread"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toBottomOf="@+id/currentaffairs">
 
                         <LinearLayout
                             android:layout_width="@dimen/_40sdp"
@@ -542,11 +583,9 @@ android:padding="@dimen/_4sdp"
                         android:layout_gravity="start|center_vertical"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
                         android:layout_weight="1"
                         android:foreground="?selectableItemBackground"
                         android:orientation="horizontal"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/playQuiz"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -634,6 +673,104 @@ android:padding="@dimen/_4sdp"
                     </LinearLayout>
 
 
+                    <LinearLayout
+
+                        android:id="@+id/currentaffairs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:foreground="?selectableItemBackground"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toStartOf="@+id/playQuiz"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@drawable/gs_rounded"
+                            android:backgroundTint="@color/black"
+                            android:gravity="center">
+
+                            <ImageView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:src="@drawable/gs_current_affairs"
+                                app:tint="@color/white" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:gravity="center_horizontal"
+                                android:text="Current affairs"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dailynews"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginEnd="8dp"
+
+                        android:layout_weight="1"
+                        android:foreground="?selectableItemBackground"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/playGame"
+                        app:layout_constraintTop_toTopOf="@+id/currentaffairs">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@drawable/gs_rounded"
+                            android:backgroundTint="@color/black"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/gs_news"
+                                app:tint="@color/white" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:gravity="center_horizontal"
+                                android:text="Daily news"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>

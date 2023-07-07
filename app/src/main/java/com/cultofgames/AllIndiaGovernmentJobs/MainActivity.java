@@ -1,11 +1,17 @@
 package com.cultofgames.AllIndiaGovernmentJobs;
 
 
+
+import static com.cultofgames.AllIndiaGovernmentJobs.SarkariAdapter.SliderAdapter.openCustomTab;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -40,6 +46,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.nativead.MediaView;
 import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.ads.nativead.NativeAdView;
+import com.google.firebase.crashlytics.BuildConfig;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -54,7 +61,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout findgovjob, currentaffairs, dailynews, examresult, category, profession, qualification, location,playGame,playQuiz;
+    LinearLayout findgovjob, currentaffairs, dailynews, examresult, category, profession, qualification, location,playGame,playQuiz,jobGpt,portfolioBuilder,globalNews;
     ImageView notification,share,bannerImage;
     SliderView sliderView;
     DatabaseReference databaseReference,imageRef;
@@ -205,10 +212,24 @@ public class MainActivity extends AppCompatActivity {
         qualification = findViewById(R.id.qualification);
         location = findViewById(R.id.location);
         notification = findViewById(R.id.notification);
-playGame=findViewById(R.id.playGame);
-playQuiz=findViewById(R.id.playQuiz);
+        playGame=findViewById(R.id.playGame);
+        playQuiz=findViewById(R.id.playQuiz);
+        jobGpt=findViewById(R.id.jobGpt);
+        portfolioBuilder=findViewById(R.id.portfolioBuilder);
+        globalNews=findViewById(R.id.globalNews);
 
 
+        globalNews.setOnClickListener(view -> {
+            CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
+
+            // below line is setting toolbar color
+            // for our custom chrome tab.
+            customIntent.setToolbarColor(ContextCompat.getColor(this, R.color.purple_200));
+
+            // we are calling below method after
+            // setting our toolbar color.
+            openCustomTab(MainActivity.this, customIntent.build(), Uri.parse("https://7165.read.newszop.com/"));
+        });
 
         findgovjob.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,30 +246,51 @@ playQuiz=findViewById(R.id.playQuiz);
                 ShowFunUAds();
             }
         });
-share.setOnClickListener(view -> {
-    try {
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
-        String shareMessage= "\nLet me recommend you this application\n\n";
-        shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
-        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-        startActivity(Intent.createChooser(shareIntent, "choose one"));
-    } catch(Exception e) {
-        //e.toString();
-    }
-});
+        share.setOnClickListener(view -> {
+            try {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
+                String shareMessage= "\nLet me recommend you this application\n\n";
+                shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                startActivity(Intent.createChooser(shareIntent, "choose one"));
+            } catch(Exception e) {
+                //e.toString();
+            }
+        });
+        jobGpt.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this,WebActivity.class);
+            i.putExtra("url","https://jobgpt.jobtanks.com/");
+            startActivity(i);
+        });
 
-playQuiz.setOnClickListener(view -> {
-    Intent i = new Intent(MainActivity.this,WebActivity.class);
-    i.putExtra("url","http://735.game.qureka.com/");
-    startActivity(i);
-});
-playGame.setOnClickListener(view -> {
-    Intent i = new Intent(MainActivity.this, GamesActivity.class);
-    //i.putExtra("url","https://4515.play.quizzop.com/");
-    startActivity(i);
-});
+        portfolioBuilder.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this,WebActivity.class);
+            i.putExtra("url","https://rethrow.jobtanks.com/");
+            startActivity(i);
+        });
+        playQuiz.setOnClickListener(view -> {
+
+            // Toast.makeText(context, ""+slider.getImageUrl(), Toast.LENGTH_SHORT).show();
+            CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
+
+            // below line is setting toolbar color
+            // for our custom chrome tab.
+            customIntent.setToolbarColor(ContextCompat.getColor(this, R.color.purple_200));
+
+            // we are calling below method after
+            // setting our toolbar color.
+            openCustomTab(MainActivity.this, customIntent.build(), Uri.parse("https://4515.play.quizzop.com/"));
+//    Intent i = new Intent(MainActivity.this,WebActivity.class);
+//    i.putExtra("url","http://735.game.qureka.com/");
+//    startActivity(i);
+        });
+        playGame.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this, GamesActivity.class);
+            //i.putExtra("url","https://4515.play.quizzop.com/");
+            startActivity(i);
+        });
         dailynews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -324,9 +366,9 @@ playGame.setOnClickListener(view -> {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                   imageBanner=  snapshot.child("image").getValue(String.class);
-                   imageLink=snapshot.child("link").getValue(String.class);
-                   Glide.with(MainActivity.this).load(imageBanner).into(bannerImage);
+                    imageBanner=  snapshot.child("image").getValue(String.class);
+                    imageLink=snapshot.child("link").getValue(String.class);
+                    Glide.with(MainActivity.this).load(imageBanner).into(bannerImage);
 
                 }
             }
